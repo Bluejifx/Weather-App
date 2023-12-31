@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./assets/icon.png">
+    <title>Weather</title>
+</head>
+<body>
+    
+    <div class="box">
+        <div class="search_bar">
+            <input type="text" placeholder="Enter the city name" spellcheck="false">
+            <button onclick="check_weather()"><img src="./assets/images/magnifier.png"></button>
+        </div>
+
+        <div class="weather_info">
+            <img src="./assets/images/search_for.png" class="weather-ico">
+            <h1 class="temp"> </h1>
+            <h2 class="city_name"></h2>
+            <div class="details">
+
+                <div class="col">
+                    <img src="./assets/images/humid.png" class="humidity-img">
+                    <div>
+                        <p class="humidity"></p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <img src="./assets/images/windy.png" class="wind-img" >
+                    <div>
+                        <p class="wind"></p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
+            </div>
+<!-- 
+                <div class="col">
+                    <img src="D:\Project WEB\Weather App\images\weather.png">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div> -->
+
+        </div>
+    </div>
+
+
+<script src="script.js"></script>
+
+
+<footer>
+    <div class="footer-content">
+      <p>&copy; 2023 Bluejifx. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
