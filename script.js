@@ -44,39 +44,54 @@ async function check_weather(){
         let atmosphere_set = new Set(["Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Ash", "Squall", "Tornado"]);
 
         if (data.weather[0].main == "Clouds"){
-            weather_icon.src = "./assets/images/cloudy.png"
+            changeWeatherIcon("./assets/images/cloudy.png");
         }
 
         else if (data.weather[0].main == "Snow"){
-            weather_icon.src = "./assets/images/snowy.png"
+            changeWeatherIcon("./assets/images/snowy.png");
         }
 
         else if (data.weather[0].main == "Rain"){
-            weather_icon.src = "./assets/images/rain.png"
+            changeWeatherIcon("./assets/images/rain.png");
         }
 
         else if (data.weather[0].main == "Drizzle"){
-            weather_icon.src = "./assets/images/drizzle.png"
+            changeWeatherIcon("./assets/images/drizzle.png");
         }
 
         else if (atmosphere_set.has(data.weather[0].main)){
-            weather_icon.src = "./assets/images/mist.png"
+            changeWeatherIcon("./assets/images/mist.png");
         }
 
         else if (data.weather[0].main == "Clear"){
-            weather_icon.src = "./assets/images/clear.png"
+            changeWeatherIcon("./assets/images/clear.png");
         }
 
         else if (data.weather[0].main == "Thunderstorm"){
-            weather_icon.src = "./assets/images/thunderstorm.png"
+            changeWeatherIcon("./assets/images/thunderstorm.png");
         }
 
     }
-
-    
-
     
 }
+
+
+
+function changeWeatherIcon(iconSrc) {
+    const weatherIcon = document.querySelector(".weather-ico");
+    weatherIcon.style.opacity = '0'; // Fade out the icon
+  
+    setTimeout(function() {
+      weatherIcon.src = iconSrc; // Change the icon source after fade out
+  
+      // Fade in the new icon after a slight delay
+      setTimeout(function() {
+        weatherIcon.style.opacity = '1'; // Fade in the new icon
+      }, 1300);
+    }, 900); // Delay to match the transition duration (0.5s = 500ms)
+  }
+
+
 
 // Only activate the function once the button is pressed
 const myButton = document.getElementById('.search_bar button');
